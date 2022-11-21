@@ -22,10 +22,10 @@
           <div class="line3"></div>
         </div>
         <ul class="nav-list">
-          <!--<li><a href="#">Para onde vai?</a></li>
+          <li><a href="#">Para onde vai?</a></li>
           <li><a href="#">Contribua</a></li>
           <li><a href="#">Quem somos</a></li>
-          <li><a href="cadastro.php">Cadastro</a></li>-->
+          <li><a href="cadastro.php">Cadastro</a></li>
         </ul>
       </nav>
     </header>
@@ -50,7 +50,7 @@
     </body>
     </html>
     <?php
-    $pdo = new PDO("mysql:host=localhost;dbname=copavisconde","root","");
+    $pdo = new PDO("mysql:host=localhost;dbname=piweb","root","");
  
     if(isset($_POST['acao'])){
         

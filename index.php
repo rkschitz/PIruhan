@@ -1,15 +1,15 @@
 <?php
+$title = "Inicial lindo";
 include 'head.php';
 ?>
-
-<body>
+<body class="imgfundoindex">
     <div class="container">
         <div class="row">
             <div class="col d-flex justify-content-center">.</div>
-            <div class="col-md-10 mt-3 justify-content-center">
-                <h1 class="title1">Safe Map</h1>
-                <p class="subtitle1">This site was created for the security of the all peoples of Joinville.</p>
-                <p class="subtitle2">Ao clicar no botão você sera redirecionado para o mapa de segurança de nossa cidade.</p>
+            <div class="col-md-10 mt-5 justify-content-center">
+                <div class="col align-self-center">
+                <p class="title1">Safe Map</p>
+</div>
             </div>
             <div class="col d-flex justify-content-center">.</div>
         </div>

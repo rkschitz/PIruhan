@@ -1,6 +1,6 @@
 <?php
 
-$pdo = new PDO("mysql:host=localhost;dbname=copavisconde", "root", "");
+$pdo = new PDO("mysql:host=localhost;dbname=piweb", "root", "");
 
 if (isset($_POST["acao"])) {
 
