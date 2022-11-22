@@ -1,7 +1,5 @@
 <?php
-session_start();
-$email = "";
-$senha = "";
-session_destroy();
+@session_start();
+@$_SESSION['user'] = false;
+@session_destroy();
 header("location:index.php");
-?>

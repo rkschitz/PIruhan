@@ -1,3 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;600&display=swap");
+
+body,
+html {
+  font-family: "Montserrat", sans-serif;
+}
 * {
   margin: 0;
   padding: 0;
@@ -20,7 +26,6 @@ a:hover {
   letter-spacing: 4px;
 }
 
-
 nav {
   display: flex;
   justify-content: space-around;
@@ -31,7 +36,7 @@ nav {
 }
 
 main {
- height: 92vh;
+  height: 92vh;
 }
 
 .nav-list {
@@ -39,6 +44,13 @@ main {
   display: flex;
   align-items: center;
   margin: 10px;
+}
+
+@media (min-width: 768px) {
+  .nav-item {
+    margin-right: 20px !important;
+    letter-spacing: 3px;
+  }
 }
 
 .nav-list li {
@@ -71,7 +83,7 @@ main {
     width: 50vw;
     height: 92vh;
     background: #23232e;
-    flex-direction: column ;
+    flex-direction: column;
     align-items: center;
     justify-content: space-around;
     transform: translateX(100%);
@@ -126,15 +138,15 @@ main {
 }
 
 .imgfundo {
-  background-image: url("../imagens/mapa3\ -\ Editado.png");
+  background-image: url("../imagens/mapa_editado.png");
   background-color: black;
   background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .bordaform {
-
   border-width: 2px;
-  border-color: black
+  border-color: black;
 }
 
 .bordabutton {
@@ -157,7 +169,7 @@ main {
 }
 
 .bordabutton1:before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0px;
   left: 0px;
@@ -166,7 +178,6 @@ main {
   background: rgba(0, 255, 0, 0.8);
   border-radius: 10px;
   transition: all 2s ease;
-
 }
 
 .bordabutton1:hover::before {
@@ -174,15 +185,20 @@ main {
 }
 
 .msginicial {
-  font-size: 9vh;
+  font-size: 9vw;
   color: white;
   text-transform: uppercase;
   letter-spacing: 4px;
   text-shadow: 2px 4px 10px black;
 }
+@media (min-width: 768px) {
+  .msginicial {
+    font-size: 5rem !important;
+  }
+}
 
 .msgcadastro {
-  color: #2E2E2E;
+  color: #2e2e2e;
   text-transform: uppercase;
   font-size: 4vh;
   text-shadow: 2px 2px 5px white;
@@ -210,13 +226,66 @@ main {
   text-align: center;
 }
 
-.subtitle2{
+.subtitle2 {
   font-size: 25px;
   text-align: center;
 }
 
-.imgfundoindex{
+.imgfundoindex {
   background-image: url("../imagens/joinville.png");
   background-size: 100%;
   background-repeat: no-repeat;
 }
+.centro{
+  justify-content: center;
+  align-items: center;
+}
+.textop{
+ font-size: 15px;
+}
+.msgcadastro1 {
+  color: #2e2e2e;
+  text-transform: uppercase;
+  font-size: 1vw;
+  text-shadow: 2px 2px 5px white;
+}
+.cadastrese {
+  text-decoration: none;
+  text-shadow: 2px 2px 5px black;
+  color: white;
+  font-size: 30px
+}
+.cadastrese1 {
+  text-decoration: none;
+  color: black;
+  font-size: 20px;
+    width: 30%;
+    border: none;
+    padding: 1.8vh;
+    margin: 10px;
+    line-height: 24px;
+    border-radius: 10px;
+    position: relative;
+    box-sizing: border-box;
+    cursor: pointer;
+    transition: all 400ms ease;
+    background-color:white;
+    font-weight: bold
+  }
+
+  .msgcadastro1 {
+    color: #2e2e2e;
+    text-transform: uppercase;
+    font-size: 20px;
+    text-shadow: 2px 2px 5px white;
+  }
+   
+  .msglogin {
+    font-size: 20px;
+    color: black;
+    text-align: center;
+  }
+  .cadastro1{
+    text-decoration: none;
+    color: white;
+  }

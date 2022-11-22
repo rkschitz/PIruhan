@@ -2,19 +2,11 @@
 $title = "Inicial lindo";
 include 'head.php';
 ?>
-<body class="imgfundoindex">
-    <div class="container">
-        <div class="row">
-            <div class="col d-flex justify-content-center">.</div>
-            <div class="col-md-10 mt-5 justify-content-center">
-                <div class="col align-self-center">
-                <p class="title1">Safe Map</p>
-</div>
-            </div>
-            <div class="col d-flex justify-content-center">.</div>
-        </div>
+<main class="imgfundoindex d-flex h-100 justify-content-center align-items-center text-white">
+    <div class="row">
+        <h1>Safe Map</h1>
     </div>
-</body>
+</main>
 
 <?php
 include "footer.php";

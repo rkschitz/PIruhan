@@ -94,5 +94,8 @@
     });
   });
 
+$('.navbar').navbarDropdown({theme: 'bs4', trigger: 'mouseover'});
+    // @TODO add options
+
 
 
