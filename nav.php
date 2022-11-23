@@ -30,13 +30,19 @@
             echo "<a class='nav-link d-ropdown-toggle text-white' href='login.php' role='button' d-ata-bs-toggle='dropdown' a-ria-expanded='false'>Login</a>";
             $acoes = '';
           } else {
-            $acoes = '<li><a class="dropdown-item" href="destruir.php">Logout</a></li>';
-            $acoes .= '<li><a class="dropdown-item" href="perfil.php">Perfil</a></li>';
+
+            $acoes = '
+            <li style="display:flex; flex-direction:column; border-bottom: 1px solid gray;" class="p-3 text-center d-flex mb-2 my-3 tamanhobarra">
+            <h5 class="text-center"> Olá ' . $_SESSION['user']['name'] . ' </h5>
+            </li>
+            ';
+            $acoes .= '<li><a class="dropdown-item text-center"border-bottom: 1px solid gray; href="perfil.php">Perfil</a></li>';
+            $acoes .= '<li><a class="dropdown-item text-center" border-bottom: 1px solid gray; href="destruir.php">Logout</a></li>';
             echo "<a class='nav-link dropdown-toggle text-white' href='#' role='button' data-bs-toggle='dropdown' aria-expanded='false'>Perfil</a>";
           }
 
           ?>
-          <ul class="dropdown-menu">
+          <ul class="dropdown-menu" style="left:-40px ;">
             <?php echo $acoes; ?>
           </ul>
         </li>

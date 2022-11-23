@@ -289,3 +289,11 @@ main {
     text-decoration: none;
     color: white;
   }
+
+  .tamanhobarra {
+    flex-direction:column;
+    display:flex;
+    left:-55px;
+    
+
+  }

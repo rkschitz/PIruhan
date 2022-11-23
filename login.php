@@ -11,8 +11,7 @@ include_once __DIR__ . './config/mysql.php';
 
 if (isset($_POST['acao'])) {
     // $_SESSION["user"]['senha'] = $_POST["senha"];
-    $_SESSION["user"]['senha'] = $_POST["senha"];
-    $_SESSION["user"]['email'] = $_POST["email"];
+    // $_SESSION["user"]['senha'] = $_POST["senha"];
     $email = $_POST['email'];
     $senha = $_POST['senha'];
     $sql = $pdo->prepare("SELECT * FROM usuarios WHERE email = ? AND senha = ?");
@@ -20,6 +19,8 @@ if (isset($_POST['acao'])) {
         if ($sql->rowCount() > 0) {
             $info = $sql->fetchAll(PDO::FETCH_ASSOC);
             foreach ($info as $key => $values) {
+                $_SESSION["user"]['email'] = $_POST["email"];
+                $_SESSION["user"]['name'] =  $values["nome"];
                 echo $values["nome"];
                 echo $values["email"];
             }
@@ -40,7 +41,6 @@ if (isset($_POST['acao'])) {
                     <h1 class="msginicial">Be you,</h1><br>
                     <h1 class="msginicial">Be safe map.</h1>
                 </div>
-
             </div>
             <div class="col-md-6 mt-0 bordaform aling-items-center justify-content-center">
                 <form method="POST" action="login.php" id="principal" class="needs-validation" novalidate>
@@ -48,7 +48,7 @@ if (isset($_POST['acao'])) {
                         <div>
                             <div class="mt-0 d-flex justify-content-center">
                                 <h3 class="msgcadastro">Insira seus dados</h3>
-                                
+
                             </div>
                             <div class="form-floating mt-3 ">
                                 <input type="email" id="floatingInput" class="form-control borda" required placeholder="email@gmail.com" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"></input>
@@ -60,13 +60,11 @@ if (isset($_POST['acao'])) {
                                 <span>*Digite sua senha de 8 digitos*</span>
 
                             </div>
-                                
+
                             <div class="mt-1 d-flex justify-content-center">
-                                
-                                <button id="botao" type="submit" class=" bordabutton bordabutton1" name="acao">Enviar</button><br>
+                                <input type="submit" id="botao" type="submit" class=" bordabutton bordabutton1" name="acao" value="Enviar"><br>
                             </div>
                             <p class="msglogin">Caso não possua um login <a class="cadastro1" href="cadastro.php">CADASTRE-SE</a></p>
-
                         </div>
                     </div>
                 </form>
