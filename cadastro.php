@@ -32,7 +32,8 @@ if (isset($_POST["acao"])) {
   $sql->bindParam(11, $rua, PDO::PARAM_STR);
   $sql->bindParam(12, $numero, PDO::PARAM_STR);
   $sql->execute();
-}
+} else
+echo '<script>document.location = "index.php";</script>';
 include "head.php";
 ?>
 <main class="imgfundo">
@@ -70,7 +71,7 @@ include "head.php";
                 <label for="floatingInput">Digite seu cpf</label>
               </div>
               <div class="form-floating mt-3 ">
-                <input type="text" maxlength="8" id="dtnascimento" class="form-control borda" required placeholder="00/00/0000" name="dtnascimento"></input>
+                <input type="text" maxlength="8" id="dtnascimento" class="form-control borda" required placeholder="00/00/0000" name="dtnascimento" minlength="8" maxlength="8"></input>
                 <label for="flotaingInput">Digite sua data de nascimento</label>
               </div>
               <div class="form-floating mt-3 ">

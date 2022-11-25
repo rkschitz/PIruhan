@@ -55,7 +55,7 @@ if (isset($_POST['acao'])) {
                                 <label for="floatingInput">Digite seu email</label>
                             </div>
                             <div class="form-floating mt-3 ">
-                                <input type="password" id="senha" class="form-control borda" required placeholder="*******" name="senha" minlength="8" maxlength="20"></input>
+                                <input type="password" id="senha" class="form-control borda" required placeholder="*******" name="senha" minlength="8" maxlength="8"></input>
                                 <label for="floatingInput">Digite sua senha</label>
                                 <span>*Digite sua senha de 8 digitos*</span>
 
