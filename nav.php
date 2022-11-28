@@ -7,7 +7,7 @@
     <div class="collapse navbar-collapse" id="navbarScroll">
       <ul class="navbar-nav w-100 items justify-content-end align-items-end me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
         <li class="nav-item">
-          <a class="nav-link text-white" href="sobrenos.php">Sobre nós</a>
+          <a class="nav-link text-white" href="#sobrenos">Sobre nós</a>
         </li>
         <?php
 

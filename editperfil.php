@@ -18,7 +18,13 @@ include_once __DIR__ . './head.php';
   <h5 class="text-center titleperfil"> Olá ' . $_SESSION['user']['nome'] . ' </h5>
   ';
   $name = '<input type="text" id="nome" class=" borda inputperfil" placeholder="' . $_SESSION['user']['cpf'] . '" name="name"></input>';
-
+  $email = '<input type="text" id="nome" class=" borda inputperfil" placeholder="' . $_SESSION['user']['email'] . '" name="name"></input>';
+  $nome = '<input type="text" id="nome" class=" borda inputperfil" placeholder="' . $_SESSION['user']['nome'] . '" name="name"></input>';
+  $senha = '<input type="text" id="nome" class=" borda inputperfil" placeholder="' . $_SESSION['user']['senha'] . '" name="name"></input>';
+  $dt = '<input type="text" id="nome" class=" borda inputperfil" placeholder="' . $_SESSION['user']['dtnascimento'] . '" name="name"></input>';
+  $email = '<input type="text" id="nome" class=" borda inputperfil" placeholder="' . $_SESSION['user']['email'] . '" name="name"></input>';
+  $email = '<input type="text" id="nome" class=" borda inputperfil" placeholder="' . $_SESSION['user']['email'] . '" name="name"></input>';
+  $email = '<input type="text" id="nome" class=" borda inputperfil" placeholder="' . $_SESSION['user']['email'] . '" name="name"></input>';
       }
 
       ?>
@@ -29,10 +35,15 @@ include_once __DIR__ . './head.php';
           <div class= "mt-3">
           <label class="nomelabel"> Digite seu novo email</label>      
           <?php echo $name ?>
+          <?php echo $email ?>
+          <?php echo $nome ?>
+          <?php echo $senha ?>
+          <?php echo $dt ?>
+
               
               </div>
               <div class="form-floating mt-3 ">
-                <input type="email" id="floatingInput" class="form-control borda" required placeholder="<?php echo $row_usuario['nome']; ?>" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"></input>
+                <input type="email" id="floatingInput" class="form-control borda" required placeholder=" " name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"></input>
                 <label for="floatingInput">Digite seu email</label>
               </div>
               <div class="form-floating mt-3 ">
