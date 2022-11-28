@@ -28,6 +28,6 @@ $title = (isset($title)) ? $title : "Titulo Padrao";
 
 </head>
 
-<body>
+<body style="background-color:black">
 
     <?php include 'nav.php' ?>

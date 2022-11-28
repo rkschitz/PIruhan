@@ -1,5 +1,5 @@
 <?php
-$title = "Inicial lindo";
+$title = "Pagina Inicial";
 include 'head.php';
 ?>
 <main class="imgfundoindex">

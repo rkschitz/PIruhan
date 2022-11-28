@@ -4,8 +4,8 @@ include_once __DIR__ . './head.php';
 if (!isset($_SESSION['user'])) {
     $name = 'Faça login para saber';
 } else {
-    $name = '<h5 class="text-center titleperfil fw-bold">  OLÁ' . $_SESSION['user']['nome'] . ' </h5>';
-    $name = '<h5 class="text-start subtitleperfil">  Nome: ' . $_SESSION['user']['nome'] . ' </h5>';
+    $name = '<h5 class="text-center titleperfil fw-bold">  OLÁ ' . $_SESSION['user']['nome'] . ' </h5>';
+    $nome = '<h5 class="text-start subtitleperfil">  Nome: ' . $_SESSION['user']['nome'] . ' </h5>';
     $email = '<h5 class="text-start subtitleperfil">  Email: ' . $_SESSION['user']['email'] . ' </h5>';
     $cpf = '<h5 class="text-start subtitleperfil">  CPF: ' . $_SESSION['user']['cpf'] . ' </h5>';
     $dtnascimento = '<h5 class="text-start subtitleperfil">  Data de nascimento: ' . $_SESSION['user']['dtnascimento'] . ' </h5>';
@@ -31,7 +31,7 @@ if (!isset($_SESSION['user'])) {
             <div class="col-md-auto MT-3 text-center">
             
                                     <div class="mt-4">
-                                            <div class=" mt-3"><?php echo $name;?></div>
+                                            <div class=" mt-3"><?php echo $nome;?></div>
                                             <div class=" mt-3"><?php echo $email;?></div>
                                             <div class=" mt-3"><?php echo $cpf;?></div>
                                             <div class=" mt-3"><?php echo $dtnascimento;?></div>

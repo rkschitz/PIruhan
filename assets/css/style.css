@@ -239,6 +239,12 @@ main {
   background-repeat: no-repeat;
 }
 
+@media (max-width: 768px) {
+  .imgfundoindex {
+    background-color: black !important;
+  }
+}
+
 .centro {
   justify-content: center;
   align-items: center;
@@ -388,3 +394,35 @@ background-size: cover;
     height: 70px;
     font-size: 20px;
   }
+  .fundosobre {
+    background-color: #101020;
+
+}
+
+.titulosobre {
+    color: white;
+    font-size: 50px;
+    text-align: center;
+    
+}
+
+.textosobre {
+    color: white;
+    margin-left: 40px;
+    margin-right: 40px;
+    font-size: 15px;
+    text-align: center;
+    
+   
+}
+
+#centrosobre {
+    margin-left: 0px;
+    color: white;
+    text-align: center;
+}
+
+#programadoressobre {
+    padding: 10px;
+    background-size: 100%;
+}
