@@ -7,11 +7,23 @@
     <div class="collapse navbar-collapse" id="navbarScroll">
       <ul class="navbar-nav w-100 items justify-content-end align-items-end me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
         <li class="nav-item">
-          <a class="nav-link text-white" href="#">Sobre nós</a>
+          <a class="nav-link text-white" href="sobrenos.pgp">Sobre nós</a>
         </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Abrir mapa
+        <?php
+
+if (!isset($_SESSION['user'])) {
+  // echo "<li class='nav-list li'><a href='login.php'>Login</a></li>";
+  $abrirmapa = '';
+} else {
+  $abrirmapa = ' <li class="nav-item">
+  <a class="nav-link text-white" href="./navigation/bairros.html">Abrir mapa</a> </li>';
+}
+
+?>
+        <?php echo $abrirmapa ?>
+        <!-- <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle text-white" href="./navigation/bairros.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            
           </a>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="#">Action</a></li>
@@ -21,7 +33,7 @@
             </li>
             <li><a class="dropdown-item" href="#">Something else here</a></li>
           </ul>
-        </li>
+        </li> -->
         <li class="nav-item dropdown">
           <?php
 
@@ -30,7 +42,6 @@
             echo "<a class='nav-link d-ropdown-toggle text-white' href='login.php' role='button' d-ata-bs-toggle='dropdown' a-ria-expanded='false'>Login</a>";
             $acoes = '';
           } else {
-
             $acoes = '
             <li style="display:flex; flex-direction:column; border-bottom: 1px solid gray;" class="p-3 text-center d-flex mb-2 my-3 tamanhobarra">
             <h5 class="text-center"> Olá ' . $_SESSION['user']['nome'] . ' </h5>

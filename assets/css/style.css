@@ -377,3 +377,14 @@ background-size: cover;
   .imgselo {
     width: 250px;
   }
+  .acessarmapa{
+    border-radius: 10px;
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
+    background-color: black;
+    color: white;
+    width: 250px;
+    height: 70px;
+    font-size: 20px;
+  }
