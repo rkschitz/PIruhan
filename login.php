@@ -1,7 +1,7 @@
 <?php
 @session_start();
 // $_SESSION["user"]['senha'] = false;
-// $_SESSION["user"]['nome'] = false;
+// $_SESSION["user"]['name'] = false;
 
 
 $titulo = "Login";
@@ -14,15 +14,34 @@ if (isset($_POST['acao'])) {
     // $_SESSION["user"]['senha'] = $_POST["senha"];
     $email = $_POST['email'];
     $senha = $_POST['senha'];
-    $sql = $pdo->prepare("SELECT * FROM usuarios WHERE email = ? AND senha = ?");
+
+    $sql = $pdo->prepare("SELECT * FROM usuarios WHERE email = ? AND senha = ? ");
     if ($sql->execute(array($email, $senha))) {
         if ($sql->rowCount() > 0) {
             $info = $sql->fetchAll(PDO::FETCH_ASSOC);
             foreach ($info as $key => $values) {
                 $_SESSION["user"]['email'] = $_POST["email"];
-                $_SESSION["user"]['name'] =  $values["nome"];
-                echo $values["nome"];
+                $_SESSION["user"]['nome'] =  $values["nome"];
+                $_SESSION["user"]['cpf'] =  $values["cpf"];
+                $_SESSION["user"]['dtnascimento'] =  $values["dtnascimento"];
+                $_SESSION["user"]['telefone'] =  $values["telefone"];
+                $_SESSION["user"]['cep'] =  $values["cep"];
+                $_SESSION["user"]['cidade'] =  $values["cidade"];
+                $_SESSION["user"]['bairro'] =  $values["bairro"];
+                $_SESSION["user"]['rua'] =  $values["rua"];
+                $_SESSION["user"]['numero'] =  $values["numero"];
+                
+                echo $values["name"];
                 echo $values["email"];
+                echo $values["cpf"];
+                echo $values["dtnascimento"];
+                echo $values["telefone"];
+                echo $values["cep"]; 
+                echo $values["cidade"];
+                echo $values["bairro"];
+                echo $values["rua"];
+                echo $values["numero"];
+                
             }
             echo '<script>document.location = "index.php";</script>';
         } else {

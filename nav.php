@@ -33,7 +33,7 @@
 
             $acoes = '
             <li style="display:flex; flex-direction:column; border-bottom: 1px solid gray;" class="p-3 text-center d-flex mb-2 my-3 tamanhobarra">
-            <h5 class="text-center"> Olá ' . $_SESSION['user']['name'] . ' </h5>
+            <h5 class="text-center"> Olá ' . $_SESSION['user']['nome'] . ' </h5>
             </li>
             ';
             $acoes .= '<li><a class="dropdown-item text-center"border-bottom: 1px solid gray; href="perfil.php">Perfil</a></li>';

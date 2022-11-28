@@ -32,8 +32,8 @@ if (isset($_POST["acao"])) {
   $sql->bindParam(11, $rua, PDO::PARAM_STR);
   $sql->bindParam(12, $numero, PDO::PARAM_STR);
   $sql->execute();
-} else
-echo '<script>document.location = "index.php";</script>';
+  echo '<script>document.location = "login.php";</script>';
+} 
 include "head.php";
 ?>
 <main class="imgfundo">
@@ -56,7 +56,7 @@ include "head.php";
             <div class="col-md-6 mt-1 ">
               <div class="form-floating mt-3 ">
                 <input type="text" id="nome" class="form-control borda" required placeholder="Nome" name="nome"></input>
-                <label for="floatingInput">Digite seu nome </label>
+                <label for="floatingInput">Digite seu nome completo</label>
               </div>
               <div class="form-floating mt-3 ">
                 <input type="email" id="floatingInput" class="form-control borda" required placeholder="email@gmail.com" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"></input>

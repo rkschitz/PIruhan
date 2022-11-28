@@ -4,6 +4,7 @@ body,
 html {
   font-family: "Montserrat", sans-serif;
 }
+
 * {
   margin: 0;
   padding: 0;
@@ -191,6 +192,7 @@ main {
   letter-spacing: 4px;
   text-shadow: 2px 4px 10px black;
 }
+
 @media (min-width: 768px) {
   .msginicial {
     font-size: 5rem !important;
@@ -232,68 +234,146 @@ main {
 }
 
 .imgfundoindex {
-  background-image: url("../imagens/joinville.png");
-  background-size: 100%;
+  background-image: url("../imagens/cidadenoite2.jpg");
+  background-size: cover;
   background-repeat: no-repeat;
 }
-.centro{
+
+.centro {
   justify-content: center;
   align-items: center;
 }
-.textop{
- font-size: 15px;
+
+.textop {
+  font-size: 15px;
 }
+
 .msgcadastro1 {
   color: #2e2e2e;
   text-transform: uppercase;
   font-size: 1vw;
   text-shadow: 2px 2px 5px white;
 }
+
 .cadastrese {
   text-decoration: none;
   text-shadow: 2px 2px 5px black;
   color: white;
   font-size: 30px
 }
+
 .cadastrese1 {
   text-decoration: none;
   color: black;
   font-size: 20px;
-    width: 30%;
-    border: none;
-    padding: 1.8vh;
-    margin: 10px;
-    line-height: 24px;
-    border-radius: 10px;
-    position: relative;
-    box-sizing: border-box;
-    cursor: pointer;
-    transition: all 400ms ease;
-    background-color:white;
-    font-weight: bold
-  }
+  width: 30%;
+  border: none;
+  padding: 1.8vh;
+  margin: 10px;
+  line-height: 24px;
+  border-radius: 10px;
+  position: relative;
+  box-sizing: border-box;
+  cursor: pointer;
+  transition: all 400ms ease;
+  background-color: white;
+  font-weight: bold
+}
 
-  .msgcadastro1 {
-    color: #2e2e2e;
-    text-transform: uppercase;
-    font-size: 20px;
-    text-shadow: 2px 2px 5px white;
-  }
-   
-  .msglogin {
-    font-size: 20px;
-    color: black;
-    text-align: center;
-  }
-  .cadastro1{
-    text-decoration: none;
-    color: white;
-  }
+.msgcadastro1 {
+  color: #2e2e2e;
+  text-transform: uppercase;
+  font-size: 20px;
+  text-shadow: 2px 2px 5px white;
+}
 
-  .tamanhobarra {
-    flex-direction:column;
-    display:flex;
-    left:-55px;
-    
+.msglogin {
+  font-size: 20px;
+  color: black;
+  text-align: center;
+}
 
+.cadastro1 {
+  text-decoration: none;
+  color: white;
+}
+
+.tamanhobarra {
+  flex-direction: column;
+  display: flex;
+  left: -55px;
+}
+.h3perfil{
+  font-size: 30px;
+  color: white;
+  text-shadow: 2px 2px 5px black;
+}
+.titleperfil{
+  color: whitesmoke;
+  font-size: 50px;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 5px black;
+
+}
+.fundoinfo{
+  background-color: #404040;
+}
+.fundoinput{
+  background-color: #505050;
+}
+.fundoperfil{
+  background-color: black;
+background-size: cover;
+  background-repeat: no-repeat;
+}
+.subtitleperfil{
+  color: white;
+  font-size: 25px;
+  text-shadow: 2px 2px 5px black;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #101010;
+  border-radius: 5px;
+  background-color: #505050;
+}
+.atitle {
+  font-size: 30px;
+  text-decoration: none;
+  color: aqua;
+  text-decoration:underline;
+}
+.imguser{
+  width: 70%;
+  
+}
+@media (max-width: 768px) {
+  .imguser {
+    width: 5rem !important;
+  }
+}
+.h1title {
+  color: white;
+  font-size: 50px;
+
+}
+.textoinicial{
+  color: white;
+  text-decoration: none;
+  font-size: 30px;
+  background-color: black;
+}
+.msgmapa{
+  color: white;
+  font-size: 30px;
+
+}
+.fundomapa{
+  background-color: black;
+
+}
+.imgloc{
+  width: 200px;
+}
+  .imgselo {
+    width: 250px;
   }
