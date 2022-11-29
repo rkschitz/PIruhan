@@ -8,7 +8,7 @@ $titulo = "Login";
 include __DIR__ . './head.php';
 include_once __DIR__ . './config/mysql.php';
 
-
+$aviso =  false;
 if (isset($_POST['acao'])) {
     // $_SESSION["user"]['senha'] = $_POST["senha"];
     // $_SESSION["user"]['senha'] = $_POST["senha"];
@@ -30,22 +30,21 @@ if (isset($_POST['acao'])) {
                 $_SESSION["user"]['bairro'] =  $values["bairro"];
                 $_SESSION["user"]['rua'] =  $values["rua"];
                 $_SESSION["user"]['numero'] =  $values["numero"];
-                
+
                 echo $values["name"];
                 echo $values["email"];
                 echo $values["cpf"];
                 echo $values["dtnascimento"];
                 echo $values["telefone"];
-                echo $values["cep"]; 
+                echo $values["cep"];
                 echo $values["cidade"];
                 echo $values["bairro"];
                 echo $values["rua"];
                 echo $values["numero"];
-                
             }
             echo '<script>document.location = "index.php";</script>';
         } else {
-            echo 'Usuário ou senha inválido.';
+            $aviso =  'Usuário ou senha inválido.';
         }
     }
 }
@@ -69,6 +68,11 @@ if (isset($_POST['acao'])) {
                                 <h3 class="msgcadastro">Insira seus dados</h3>
 
                             </div>
+                            <?php if ($aviso) : ?>
+                                <div class="alert alert-danger" role="alert">
+                                    <?php echo $aviso; ?>
+                                </div>
+                            <?php endif; ?>
                             <div class="form-floating mt-3 ">
                                 <input type="email" id="floatingInput" class="form-control borda" required placeholder="email@gmail.com" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"></input>
                                 <label for="floatingInput">Digite seu email</label>

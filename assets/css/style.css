@@ -3,13 +3,12 @@
 body,
 html {
   /* font-family: "Montserrat", sans-serif; */
-  font-family: 'Noto Sans', sans-serif;
+  font-family: "Noto Sans", sans-serif;
 }
 
 * {
   margin: 0;
   padding: 0;
-
 }
 
 nav a {
@@ -239,6 +238,10 @@ main {
   background-image: url("../imagens/cidadenoite2.jpg");
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 @media (max-width: 768px) {
@@ -267,7 +270,7 @@ main {
   text-decoration: none;
   text-shadow: 2px 2px 5px black;
   color: white;
-  font-size: 30px
+  font-size: 30px;
 }
 
 .cadastrese1 {
@@ -285,7 +288,7 @@ main {
   cursor: pointer;
   transition: all 400ms ease;
   background-color: white;
-  font-weight: bold
+  font-weight: bold;
 }
 
 .msgcadastro1 {
@@ -311,30 +314,29 @@ main {
   display: flex;
   left: -55px;
 }
-.h3perfil{
+.h3perfil {
   font-size: 30px;
   color: white;
   text-shadow: 2px 2px 5px black;
 }
-.titleperfil{
+.titleperfil {
   color: whitesmoke;
   font-size: 50px;
   text-transform: uppercase;
   text-shadow: 2px 2px 5px black;
-
 }
-.fundoinfo{
+.fundoinfo {
   background-color: #404040;
 }
-.fundoinput{
+.fundoinput {
   background-color: #505050;
 }
-.fundoperfil{
+.fundoperfil {
   background-color: black;
-background-size: cover;
+  background-size: cover;
   background-repeat: no-repeat;
 }
-.subtitleperfil{
+.subtitleperfil {
   color: white;
   font-size: 25px;
   text-shadow: 2px 2px 5px black;
@@ -348,11 +350,10 @@ background-size: cover;
   font-size: 30px;
   text-decoration: none;
   color: aqua;
-  text-decoration:underline;
+  text-decoration: underline;
 }
-.imguser{
+.imguser {
   width: 70%;
-  
 }
 @media (max-width: 768px) {
   .imguser {
@@ -362,69 +363,62 @@ background-size: cover;
 .h1title {
   color: white;
   font-size: 50px;
-
 }
-.textoinicial{
+.textoinicial {
   color: white;
   text-decoration: none;
   font-size: 30px;
   background-color: black;
 }
-.msgmapa{
+.msgmapa {
   color: white;
   font-size: 30px;
-
 }
-.fundomapa{
+.fundomapa {
   background-color: black;
-
 }
-.imgloc{
+.imgloc {
   width: 200px;
 }
-  .imgselo {
-    width: 250px;
-  }
-  .acessarmapa{
-    border-radius: 10px;
-    border-style: solid;
-    border-color: black;
-    border-width: 1px;
-    background-color: black;
-    color: white;
-    width: 250px;
-    height: 70px;
-    font-size: 20px;
-  }
-  .fundosobre {
-    background-color: #101020;
-
+.imgselo {
+  width: 250px;
+}
+.acessarmapa {
+  border-radius: 10px;
+  border-style: solid;
+  border-color: black;
+  border-width: 1px;
+  background-color: black;
+  color: white;
+  width: 250px;
+  height: 70px;
+  font-size: 20px;
+}
+.fundosobre {
+  background-color: #101020;
 }
 
 .titulosobre {
-    color: white;
-    font-size: 50px;
-    text-align: center;
-    
+  color: white;
+  font-size: 50px;
+  text-align: center;
 }
 
 .textosobre {
-    color: white;
-    margin-left: 40px;
-    margin-right: 40px;
-    font-size: 15px;
-    text-align: center;
-    
-   
+  color: white;
+  margin-left: 40px;
+  margin-right: 40px;
+  font-size: 15px;
+  text-align: center;
 }
 
 #centrosobre {
-    margin-left: 0px;
-    color: white;
-    text-align: center;
+  margin-left: 0px;
+  color: white;
+  text-align: center;
 }
 
 #programadoressobre {
-    padding: 10px;
-    background-size: 100%;
+  padding: 10px;
+  background-size: 100%;
 }
