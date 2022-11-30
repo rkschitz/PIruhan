@@ -422,3 +422,7 @@ main {
   padding: 10px;
   background-size: 100%;
 }
+
+html{
+  scroll-behavior: smooth;
+}

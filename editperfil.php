@@ -2,10 +2,28 @@
 session_start();
 include_once __DIR__ . './head.php';
 
-// get user data from database based on id
 
+//alterar dados do usuario no banco de dados
+if (isset($_POST['acao'])) {
+    $nome = $_POST['nome'];
+    $cpf = $_POST['cpf'];
+    $dtnascimento = $_POST['dtnascimento'];
+    $telefone = $_POST['telefone'];
+    $cep = $_POST['cep'];
+    $cidade = $_POST['cidade'];
+    $bairro = $_POST['bairro'];
+    $rua = $_POST['rua'];
+    $numero = $_POST['numero'];
+    $email = $_POST['email'];
+    $senha = $_POST['senha'];
 
-
+    $sql = $pdo->prepare("UPDATE usuarios SET nome = ?, cpf = ?, dtnascimento = ?, telefone = ?, cep = ?, cidade = ?, bairro = ?, rua = ?, numero = ?, email = ?, senha = ? WHERE id = ?");
+    if ($sql->execute(array($nome, $cpf, $dtnascimento, $telefone, $cep, $cidade, $bairro, $rua, $numero, $email, $senha, $_SESSION["user"]['id']))) {
+        echo '<script>document.location = "index.php";</script>';
+    } else {
+        echo '<script>document.location = "editperfil.php";</script>';
+    }
+}
 ?>
 <main class="fundoperfil">
   <div class="container">
@@ -20,7 +38,7 @@ include_once __DIR__ . './head.php';
           $acoes = '';
         } else {
           $acoes = '';
-          //   $name = '<input type="text" id="nome" class=" borda inputperfil" placeholder="' . $_SESSION['user']['cpf'] . '" name="name"></input>';
+             $name = '<input type="text" id="nome" class=" borda inputperfil" placeholder="' . $_SESSION['user']['cpf'] . '" name="name"></input>';
           //   $email = '<input type="text" id="nome" class=" borda inputperfil" placeholder="' . $_SESSION['user']['email'] . '" name="name"></input>';
           //   $nome = '<input type="text" id="nome" class=" borda inputperfil" placeholder="' . $_SESSION['user']['nome'] . '" name="name"></input>';
           //   $senha = '<input type="text" id="nome" class=" borda inputperfil" placeholder="' . $_SESSION['user']['senha'] . '" name="name"></input>';
@@ -37,8 +55,8 @@ include_once __DIR__ . './head.php';
             <div class="row">
               <div class="col-md-6 mt-3">
                 <div class="mt-3">
+                  <?php echo $name ?>
                   <div class="form-floating mt-3 ">
-                    <input type="text" id="cpf" class="form-control borda inputperfil" placeholder="<?php echo  $_SESSION['user']['cpf'];  ?>" name="cpf"></input>
                     <label class="" for="cpf">Digite seu CPF</label>
                   </div>
                   <div class="form-floating mt-3 ">
