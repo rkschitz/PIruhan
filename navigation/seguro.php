@@ -1,3 +1,10 @@
+<?php
+if (!isset($_SESSION['user'])) {
+    header("location:index.php");
+} else {
+    $asd = '';
+}
+?>
 <!DOCTYPE html>
 <head>    
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
@@ -266,7 +273,6 @@
                 #menurecentes{
                     margin-top: 1%;
                 }
-
                 @media (max-height: 900px) {
                     body{
                     background-color: black;
@@ -1391,379 +1397,552 @@
     </style>       
 </head>
 <body>      
-    <div id="display">
-        <div id="espaco">
-            <a href="../index.php" id="links">Voltar</a>
-        </div>
-        <div id="navbar">
-            <a href="perigo.html" id="links">Cuidado</a>
-            <a href="seguro.html" id="links">Seguro</a>
-            <a href="bairros.html" id="links">Bairros</a>
-        </div>
-    </div>
-    <div id="pesquisa">
-        <div id="esquerda">
-            <input id="input" placeholder="Para onde você deseja ir?"></input>
-            <div id="recentes">
-                <a id="localizacao">Últimas Localizações:</a>
-                <input id="inputdois"></input>
-                <input id="inputdois"></input>
+            <div id="display">
+                <div id="espaco">
+                    <a href="../index.php" id="links">Voltar</a>
+                </div>
+                <div id="navbar">
+                    <a href="perigo.html" id="links">Cuidado</a>
+                    <a href="seguro.html" id="links">Seguro</a>
+                    <a href="bairros.html" id="links">Bairros</a>
+                </div>
             </div>
-            <div id="favoritos">
-                <a id="localizacao">Localização favorita</a>
-                <input id="inputdois" type="text"></input>
-                <button id="salvar" type="submit">Salvar</button>
+            <div id="pesquisa">
+                <div id="esquerda">
+                    <input id="input" placeholder="Para onde você deseja ir?"></input>
+                    <div id="recentes">
+                        <a id="localizacao">Últimas Localizações:</a>
+                        <input id="inputdois"></input>
+                        <input id="inputdois"></input>
+                    </div>
+                    <div id="favoritos">
+                        <a id="localizacao">Localização favorita</a>
+                        <input id="inputdois" type="text"></input>
+                        <button id="salvar" type="submit">Salvar</button>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
-    <div class="folium-map" id="map_6e83cbd798c966a931e947ef49eedbcb" >
-        <div class="folium-map" id="map_aea79f4b9faeb2fbe1d50866f21e4136" >
-            <div class="folium-map" id="map_db45728d0d9ca290d99d424728a0f5d0"></div>
+            <div class="folium-map" id="map_6e83cbd798c966a931e947ef49eedbcb" >
+                <div class="folium-map" id="map_aea79f4b9faeb2fbe1d50866f21e4136" >
+                    <div class="folium-map" id="map_db45728d0d9ca290d99d424728a0f5d0" >
+                    </div>
                 </div>
                 <details id="dados">
-                <summary style="text-align: center;">Menu</summary>
-                    <div id="icones"></div>
-                    <br>
-                    <div id="menu">
-                        <input id="menuinput" type="text" placeholder="Para onde você deseja ir?"></input>
-                    </div>
-                    <br>
-                    <div id="menurecentes">
-                        <div id="menulocalizacao">Últimas Localizações:</div>
-                        <input id="menuinputdois"></input>
-                        <input id="menuinputdois"></input>
-                    </div>
-                    <div id="menufavoritos">
-                        <a id="menulocalizacao">Localização favorita</a>
-                        <input id="menuinputdois" type="text"></input>
-                        <button id="menusalvar" type="submit">Salvar</button>
-                    </div>
-                    <br>
+                    <summary style="text-align: center;">Menu</summary>
+                        <div id="icones"></div>
+                        <br>
+                        <div id="menu">
+                            <input id="menuinput" type="text" placeholder="Para onde você deseja ir?"></input>
+                        </div>
+                        <br>
+                        <div id="menurecentes">
+                            <div id="menulocalizacao">Últimas Localizações:</div>
+                            <input id="menuinputdois"></input>
+                            <input id="menuinputdois"></input>
+                        </div>
+                        <div id="menufavoritos">
+                            <a id="menulocalizacao">Localização favorita</a>
+                            <input id="menuinputdois" type="text"></input>
+                            <button id="menusalvar" type="submit">Salvar</button>
+                        </div>
+                        <br>
                 </details>
                 <footer id="rodape">
                     <a href="perigo.html" style="color: black; text-decoration: none; font-family: 'Roboto Condensed', sans-serif;">CUIDADO</a>
                     <a href="seguro.html" style="color: black; text-decoration: none; font-family: 'Roboto Condensed', sans-serif;">SEGURO</a>                    
                     <a href="bairros.html" style="color: black; text-decoration: none; font-family: 'Roboto Condensed', sans-serif;">BAIRROS</a>
                 </footer>
-            </div>   
-        </div>    
-    </div>        
+            </div>       
+            
 </body>
 <script>    
+    
     var map_6e83cbd798c966a931e947ef49eedbcb = L.map(
-        "map_6e83cbd798c966a931e947ef49eedbcb",
-        {
-            center: [-26.3051, -48.8461],
-            crs: L.CRS.EPSG3857,
-            zoom: 12,
-            zoomControl: false,
-            preferCanvas: false,
-        }
-    );        
+    "map_6e83cbd798c966a931e947ef49eedbcb",
+    {
+        center: [-26.3051, -48.8461],
+        crs: L.CRS.EPSG3857,
+        zoom: 12,
+        zoomControl: false,
+        preferCanvas: false,
+    }
+);        
 
-    var tile_layer_a55f0a126099f79424467786d32cd1d9 = L.tileLayer(
-        "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
-        {"attribution": "Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
-    ).addTo(map_6e83cbd798c966a931e947ef49eedbcb);
+var tile_layer_a55f0a126099f79424467786d32cd1d9 = L.tileLayer(
+    "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+    {"attribution": "Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+).addTo(map_6e83cbd798c966a931e947ef49eedbcb);
 
 
 
 
-    var marker_1ed7006925534cf7326756d0c7a6d2a6 = L.marker(
-        [-26.3051, -48.8461],
-        {}
-    ).addTo(map_6e83cbd798c966a931e947ef49eedbcb);
+var marker_d26f86c8b6ad9b928612f79ba1534b09 = L.marker(
+    [-26.291168146927028, -48.828173191493285],
+    {}
+).addTo(map_6e83cbd798c966a931e947ef49eedbcb);
 
 
-    var icon_631d241e9a691b7127049ef454b263b0 = L.AwesomeMarkers.icon(
-        {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
-    );
-    marker_1ed7006925534cf7326756d0c7a6d2a6.setIcon(icon_631d241e9a691b7127049ef454b263b0);
+var icon_316a0bb963280a42128c784ecd815779 = L.AwesomeMarkers.icon(
+    {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+);
+marker_d26f86c8b6ad9b928612f79ba1534b09.setIcon(icon_316a0bb963280a42128c784ecd815779);
 
 
-    var popup_e9f1f086300b89729571ff3c39560d34 = L.popup({"maxWidth": "100%"});
+var popup_0a16867489ad0b7a4c2fec07ce356001 = L.popup({"maxWidth": "100%"});
 
 
 
-        var html_75b47f8c8a727deca107ea3290fd74fe = $(`<div id="html_75b47f8c8a727deca107ea3290fd74fe" style="width: 100.0%; height: 100.0%;">Alerta&nbsp;de&nbsp;Ataques</div>`)[0];
-        popup_e9f1f086300b89729571ff3c39560d34.setContent(html_75b47f8c8a727deca107ea3290fd74fe);
+    var html_f69b1a6327d3308b6b2a243cee64e064 = $(`<div id="html_f69b1a6327d3308b6b2a243cee64e064" style="width: 100.0%; height: 100.0%;">Caminhada&nbsp;Segura</div>`)[0];
+    popup_0a16867489ad0b7a4c2fec07ce356001.setContent(html_f69b1a6327d3308b6b2a243cee64e064);
 
 
 
-    marker_1ed7006925534cf7326756d0c7a6d2a6.bindPopup(popup_e9f1f086300b89729571ff3c39560d34)
-    ;
+marker_d26f86c8b6ad9b928612f79ba1534b09.bindPopup(popup_0a16867489ad0b7a4c2fec07ce356001)
+;
 
 
 
 
-    var marker_d30125b05085eab3f77ebd73be6e20a5 = L.marker(
-        [-26.28652, -48.843258],
-        {}
-    ).addTo(map_6e83cbd798c966a931e947ef49eedbcb);
+var marker_4756f868231b48f837fa62a1897e628a = L.marker(
+    [-26.25998, -48.866187],
+    {}
+).addTo(map_6e83cbd798c966a931e947ef49eedbcb);
 
 
-    var icon_9307e61f6eefa31f11b3b58d1a37dfea = L.AwesomeMarkers.icon(
-        {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
-    );
-    marker_d30125b05085eab3f77ebd73be6e20a5.setIcon(icon_9307e61f6eefa31f11b3b58d1a37dfea);
+var icon_a111a98bea667e2f8c0963702f3ddeba = L.AwesomeMarkers.icon(
+    {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+);
+marker_4756f868231b48f837fa62a1897e628a.setIcon(icon_a111a98bea667e2f8c0963702f3ddeba);
 
 
-    var popup_d3a838457c853b30d1e2067a0b48517a = L.popup({"maxWidth": "100%"});
+var popup_b69e9e20d18b77d81dd6bbe044f5ff5d = L.popup({"maxWidth": "100%"});
 
 
 
-        var html_af4cf5c61dd41e22bda1af014433be55 = $(`<div id="html_af4cf5c61dd41e22bda1af014433be55" style="width: 100.0%; height: 100.0%;">Alerta&nbsp;de&nbsp;Ataques</div>`)[0];
-        popup_d3a838457c853b30d1e2067a0b48517a.setContent(html_af4cf5c61dd41e22bda1af014433be55);
+    var html_54de84496e5ecc2174ee5b8d6ef5849c = $(`<div id="html_54de84496e5ecc2174ee5b8d6ef5849c" style="width: 100.0%; height: 100.0%;">Caminhada&nbsp;Segura</div>`)[0];
+    popup_b69e9e20d18b77d81dd6bbe044f5ff5d.setContent(html_54de84496e5ecc2174ee5b8d6ef5849c);
 
 
 
-    marker_d30125b05085eab3f77ebd73be6e20a5.bindPopup(popup_d3a838457c853b30d1e2067a0b48517a)
-    ;
+marker_4756f868231b48f837fa62a1897e628a.bindPopup(popup_b69e9e20d18b77d81dd6bbe044f5ff5d)
+;
 
 
 
 
-    var marker_db0e95e6f1c3d95a3b49a6e129c18ca3 = L.marker(
-        [-26.289028, -48.900459],
-        {}
-    ).addTo(map_6e83cbd798c966a931e947ef49eedbcb);
+var marker_3e02ab947b3a95df23fc62f30d158f0f = L.marker(
+    [-26.319111, -48.842435],
+    {}
+).addTo(map_6e83cbd798c966a931e947ef49eedbcb);
 
 
-    var icon_a3f204f69ad5c79ff239a8526b393680 = L.AwesomeMarkers.icon(
-        {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
-    );
-    marker_db0e95e6f1c3d95a3b49a6e129c18ca3.setIcon(icon_a3f204f69ad5c79ff239a8526b393680);
+var icon_cf2b8e27cc172caf2091e269d8eea202 = L.AwesomeMarkers.icon(
+    {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+);
+marker_3e02ab947b3a95df23fc62f30d158f0f.setIcon(icon_cf2b8e27cc172caf2091e269d8eea202);
 
 
-    var popup_58cffadc329f0f2135137f847cfbebe9 = L.popup({"maxWidth": "100%"});
+var popup_7d4b9532f531fb3bdbf8af8cef4d9303 = L.popup({"maxWidth": "100%"});
 
 
 
-        var html_31324832edbe91c85a42744b5a90572b = $(`<div id="html_31324832edbe91c85a42744b5a90572b" style="width: 100.0%; height: 100.0%;">Alerta&nbsp;de&nbsp;Ataques</div>`)[0];
-        popup_58cffadc329f0f2135137f847cfbebe9.setContent(html_31324832edbe91c85a42744b5a90572b);
+    var html_a730ae91d958de96614622fdbf90087d = $(`<div id="html_a730ae91d958de96614622fdbf90087d" style="width: 100.0%; height: 100.0%;">Caminhada&nbsp;Segura</div>`)[0];
+    popup_7d4b9532f531fb3bdbf8af8cef4d9303.setContent(html_a730ae91d958de96614622fdbf90087d);
 
 
 
-    marker_db0e95e6f1c3d95a3b49a6e129c18ca3.bindPopup(popup_58cffadc329f0f2135137f847cfbebe9)
-    ;
+marker_3e02ab947b3a95df23fc62f30d158f0f.bindPopup(popup_7d4b9532f531fb3bdbf8af8cef4d9303)
+;
 
 
 
 
-    var marker_2f5041a4c0c59c893a8b04e6eb8e660b = L.marker(
-        [-26.337793, -48.838545],
-        {}
-    ).addTo(map_6e83cbd798c966a931e947ef49eedbcb);
+var marker_609bc9d195fbd860187627da934915a1 = L.marker(
+    [-26.308937, -48.850754],
+    {}
+).addTo(map_6e83cbd798c966a931e947ef49eedbcb);
 
 
-    var icon_bf0b2ebbad3cbc5d61576b4a86d6c827 = L.AwesomeMarkers.icon(
-        {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
-    );
-    marker_2f5041a4c0c59c893a8b04e6eb8e660b.setIcon(icon_bf0b2ebbad3cbc5d61576b4a86d6c827);
+var icon_5f3dec1eff9566ff9b53ec4b829f4416 = L.AwesomeMarkers.icon(
+    {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+);
+marker_609bc9d195fbd860187627da934915a1.setIcon(icon_5f3dec1eff9566ff9b53ec4b829f4416);
 
 
-    var popup_986a1f1c2614ec146b5bec4cc2b33f22 = L.popup({"maxWidth": "100%"});
+var popup_32fe95785bb0c71dfa3099da12ba7c71 = L.popup({"maxWidth": "100%"});
 
 
 
-        var html_56b69f5577be60dc43dfcad79e668a79 = $(`<div id="html_56b69f5577be60dc43dfcad79e668a79" style="width: 100.0%; height: 100.0%;">Alerta&nbsp;de&nbsp;Ataques</div>`)[0];
-        popup_986a1f1c2614ec146b5bec4cc2b33f22.setContent(html_56b69f5577be60dc43dfcad79e668a79);
+    var html_c47728bd3bc98ccd5697403c2f221a08 = $(`<div id="html_c47728bd3bc98ccd5697403c2f221a08" style="width: 100.0%; height: 100.0%;">Caminhada&nbsp;Segura</div>`)[0];
+    popup_32fe95785bb0c71dfa3099da12ba7c71.setContent(html_c47728bd3bc98ccd5697403c2f221a08);
 
 
 
-    marker_2f5041a4c0c59c893a8b04e6eb8e660b.bindPopup(popup_986a1f1c2614ec146b5bec4cc2b33f22)
-    ;
+marker_609bc9d195fbd860187627da934915a1.bindPopup(popup_32fe95785bb0c71dfa3099da12ba7c71)
+;
 
+//Max Colin
+var marker_609bc9d195fbd860187627da934915a1 = L.marker(
+    [-26.294345, -48.854704],
+    {}
+).addTo(map_6e83cbd798c966a931e947ef49eedbcb);
 
 
+var icon_5f3dec1eff9566ff9b53ec4b829f4416 = L.AwesomeMarkers.icon(
+    {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+);
+marker_609bc9d195fbd860187627da934915a1.setIcon(icon_5f3dec1eff9566ff9b53ec4b829f4416);
 
-    var marker_2ba4c148752ffa3dc98f7c6f5f4bc7bf = L.marker(
-        [-26.33673, -48.811231],
-        {}
-    ).addTo(map_6e83cbd798c966a931e947ef49eedbcb);
 
+var popup_32fe95785bb0c71dfa3099da12ba7c71 = L.popup({"maxWidth": "100%"});
 
-    var icon_76dd32370b8b6f022fbde54d2038219b = L.AwesomeMarkers.icon(
-        {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
-    );
-    marker_2ba4c148752ffa3dc98f7c6f5f4bc7bf.setIcon(icon_76dd32370b8b6f022fbde54d2038219b);
 
 
-    var popup_e47853b33bde17b2112ce0d6f92b1061 = L.popup({"maxWidth": "100%"});
+    var html_c47728bd3bc98ccd5697403c2f221a08 = $(`<div id="html_c47728bd3bc98ccd5697403c2f221a08" style="width: 100.0%; height: 100.0%;">Caminhada&nbsp;Segura</div>`)[0];
+    popup_32fe95785bb0c71dfa3099da12ba7c71.setContent(html_c47728bd3bc98ccd5697403c2f221a08);
 
 
 
-        var html_01090b72266d2659bcdb86ed569c68d1 = $(`<div id="html_01090b72266d2659bcdb86ed569c68d1" style="width: 100.0%; height: 100.0%;">Alerta&nbsp;de&nbsp;Ataques</div>`)[0];
-        popup_e47853b33bde17b2112ce0d6f92b1061.setContent(html_01090b72266d2659bcdb86ed569c68d1);
+marker_609bc9d195fbd860187627da934915a1.bindPopup(popup_32fe95785bb0c71dfa3099da12ba7c71)
+;
 
 
+//XV de Novembro
+var marker_609bc9d195fbd860187627da934915a1 = L.marker(
+    [-26.287328, -48.902824],
+    {}
+).addTo(map_6e83cbd798c966a931e947ef49eedbcb);
 
-    marker_2ba4c148752ffa3dc98f7c6f5f4bc7bf.bindPopup(popup_e47853b33bde17b2112ce0d6f92b1061)
-    ;
 
+var icon_5f3dec1eff9566ff9b53ec4b829f4416 = L.AwesomeMarkers.icon(
+    {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+);
+marker_609bc9d195fbd860187627da934915a1.setIcon(icon_5f3dec1eff9566ff9b53ec4b829f4416);
 
 
+var popup_32fe95785bb0c71dfa3099da12ba7c71 = L.popup({"maxWidth": "100%"});
 
-    var marker_52874b4cc82f8ccf23e0c8cba3ddcfab = L.marker(
-        [-26.269079, -48.869703],
-        {}
-    ).addTo(map_6e83cbd798c966a931e947ef49eedbcb);
 
 
-    var icon_5b7fa316a3db67d3290de78fc2952e72 = L.AwesomeMarkers.icon(
-        {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
-    );
-    marker_52874b4cc82f8ccf23e0c8cba3ddcfab.setIcon(icon_5b7fa316a3db67d3290de78fc2952e72);
+    var html_c47728bd3bc98ccd5697403c2f221a08 = $(`<div id="html_c47728bd3bc98ccd5697403c2f221a08" style="width: 100.0%; height: 100.0%;">Caminhada&nbsp;Segura</div>`)[0];
+    popup_32fe95785bb0c71dfa3099da12ba7c71.setContent(html_c47728bd3bc98ccd5697403c2f221a08);
 
 
-    var popup_753a43193a48c9de29cb05fe34721c32 = L.popup({"maxWidth": "100%"});
 
+marker_609bc9d195fbd860187627da934915a1.bindPopup(popup_32fe95785bb0c71dfa3099da12ba7c71)
+;
 
 
-        var html_9065c4d29dfe6b82aa4759b77303fadf = $(`<div id="html_9065c4d29dfe6b82aa4759b77303fadf" style="width: 100.0%; height: 100.0%;">Alerta&nbsp;de&nbsp;Ataques</div>`)[0];
-        popup_753a43193a48c9de29cb05fe34721c32.setContent(html_9065c4d29dfe6b82aa4759b77303fadf);
+//Benjamin Constant
+var marker_609bc9d195fbd860187627da934915a1 = L.marker(
+    [-26.284560, -48.855379],
+    {}
+).addTo(map_6e83cbd798c966a931e947ef49eedbcb);
 
 
+var icon_5f3dec1eff9566ff9b53ec4b829f4416 = L.AwesomeMarkers.icon(
+    {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+);
+marker_609bc9d195fbd860187627da934915a1.setIcon(icon_5f3dec1eff9566ff9b53ec4b829f4416);
 
-    marker_52874b4cc82f8ccf23e0c8cba3ddcfab.bindPopup(popup_753a43193a48c9de29cb05fe34721c32)
-    ;
 
+var popup_32fe95785bb0c71dfa3099da12ba7c71 = L.popup({"maxWidth": "100%"});
 
 
 
-    var marker_43040e021c7d4703d99b9b7b839671dc = L.marker(
-        [-26.239347, -48.816474],
-        {}
-    ).addTo(map_6e83cbd798c966a931e947ef49eedbcb);
+    var html_c47728bd3bc98ccd5697403c2f221a08 = $(`<div id="html_c47728bd3bc98ccd5697403c2f221a08" style="width: 100.0%; height: 100.0%;">Caminhada&nbsp;Segura</div>`)[0];
+    popup_32fe95785bb0c71dfa3099da12ba7c71.setContent(html_c47728bd3bc98ccd5697403c2f221a08);
 
 
-    var icon_c53cef1eeca5cd7fbd57e0bebd93cbd5 = L.AwesomeMarkers.icon(
-        {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
-    );
-    marker_43040e021c7d4703d99b9b7b839671dc.setIcon(icon_c53cef1eeca5cd7fbd57e0bebd93cbd5);
 
+marker_609bc9d195fbd860187627da934915a1.bindPopup(popup_32fe95785bb0c71dfa3099da12ba7c71)
+;
 
-    var popup_45e51a8991797aeec614a5855e8f0647 = L.popup({"maxWidth": "100%"});
 
+//Rua Iririu
+var marker_609bc9d195fbd860187627da934915a1 = L.marker(
+    [-26.276003, -48.834151],
+    {}
+).addTo(map_6e83cbd798c966a931e947ef49eedbcb);
 
 
-        var html_9301ec30c34b68d059033b4b285f5506 = $(`<div id="html_9301ec30c34b68d059033b4b285f5506" style="width: 100.0%; height: 100.0%;">Alerta&nbsp;de&nbsp;Ataques</div>`)[0];
-        popup_45e51a8991797aeec614a5855e8f0647.setContent(html_9301ec30c34b68d059033b4b285f5506);
+var icon_5f3dec1eff9566ff9b53ec4b829f4416 = L.AwesomeMarkers.icon(
+    {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+);
+marker_609bc9d195fbd860187627da934915a1.setIcon(icon_5f3dec1eff9566ff9b53ec4b829f4416);
 
 
+var popup_32fe95785bb0c71dfa3099da12ba7c71 = L.popup({"maxWidth": "100%"});
 
-    marker_43040e021c7d4703d99b9b7b839671dc.bindPopup(popup_45e51a8991797aeec614a5855e8f0647)
-    ;
 
 
+    var html_c47728bd3bc98ccd5697403c2f221a08 = $(`<div id="html_c47728bd3bc98ccd5697403c2f221a08" style="width: 100.0%; height: 100.0%;">Caminhada&nbsp;Segura</div>`)[0];
+    popup_32fe95785bb0c71dfa3099da12ba7c71.setContent(html_c47728bd3bc98ccd5697403c2f221a08);
 
 
-    var marker_c02010503b9aebf2ef99ed797e189268 = L.marker(
-        [-26.278801, -48.80289],
-        {}
-    ).addTo(map_6e83cbd798c966a931e947ef49eedbcb);
 
-
-    var icon_15a357b9216790650968665b8ca2b550 = L.AwesomeMarkers.icon(
-        {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
-    );
-    marker_c02010503b9aebf2ef99ed797e189268.setIcon(icon_15a357b9216790650968665b8ca2b550);
-
-
-    var popup_e1ee77269d8454e8aa1d1cdf2e2c86fa = L.popup({"maxWidth": "100%"});
-
-
-
-        var html_8a6461370a5310b0c5e833533d94e702 = $(`<div id="html_8a6461370a5310b0c5e833533d94e702" style="width: 100.0%; height: 100.0%;">Alerta&nbsp;de&nbsp;Ataques</div>`)[0];
-        popup_e1ee77269d8454e8aa1d1cdf2e2c86fa.setContent(html_8a6461370a5310b0c5e833533d94e702);
-
-
-
-    marker_c02010503b9aebf2ef99ed797e189268.bindPopup(popup_e1ee77269d8454e8aa1d1cdf2e2c86fa)
-    ;
-
-
-
-
-    var marker_638cfbeeafce78348ce47eef057c6240 = L.marker(
-        [-26.331592, -48.813102],
-        {}
-    ).addTo(map_6e83cbd798c966a931e947ef49eedbcb);
-
-
-    var icon_08f81f2bec75ed7ae094e4df162980d5 = L.AwesomeMarkers.icon(
-        {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
-    );
-    marker_638cfbeeafce78348ce47eef057c6240.setIcon(icon_08f81f2bec75ed7ae094e4df162980d5);
-
-
-    var popup_bce18a38433aae62c76ea2af450deec7 = L.popup({"maxWidth": "100%"});
-
-
-
-        var html_d1807b1e40e23f61ea20fb69d400a65d = $(`<div id="html_d1807b1e40e23f61ea20fb69d400a65d" style="width: 100.0%; height: 100.0%;">Alerta&nbsp;de&nbsp;Ataques</div>`)[0];
-        popup_bce18a38433aae62c76ea2af450deec7.setContent(html_d1807b1e40e23f61ea20fb69d400a65d);
-
-
-
-    marker_638cfbeeafce78348ce47eef057c6240.bindPopup(popup_bce18a38433aae62c76ea2af450deec7)
-    ;
-
-
-
-
-    var marker_8f1dbe1bbaa719b246de6e711d31e97c = L.marker(
-        [-26.289584, -48.771896],
-        {}
-    ).addTo(map_6e83cbd798c966a931e947ef49eedbcb);
-
-
-    var icon_2386e8ad0dfa4c1f009e53a0db8c9c7c = L.AwesomeMarkers.icon(
-        {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
-    );
-    marker_8f1dbe1bbaa719b246de6e711d31e97c.setIcon(icon_2386e8ad0dfa4c1f009e53a0db8c9c7c);
-
-
-    var popup_79c2b7fd6112b606d5086133b2acdf88 = L.popup({"maxWidth": "100%"});
-
-
-
-        var html_985aebe89bb1c36aed8d27e874dd66e1 = $(`<div id="html_985aebe89bb1c36aed8d27e874dd66e1" style="width: 100.0%; height: 100.0%;">Alerta&nbsp;de&nbsp;Ataques</div>`)[0];
-        popup_79c2b7fd6112b606d5086133b2acdf88.setContent(html_985aebe89bb1c36aed8d27e874dd66e1);
-
-
-
-    marker_8f1dbe1bbaa719b246de6e711d31e97c.bindPopup(popup_79c2b7fd6112b606d5086133b2acdf88)
-    ;
-
-
-
-
-    var marker_2f1c3ea13f7cce710b4a0f2ec3dfa9f0 = L.marker(
-        [-26.260891, -48.804811],
-        {}
-    ).addTo(map_6e83cbd798c966a931e947ef49eedbcb);
-
-
-    var icon_1d2a97587bc5cd558125ac4552ca4528 = L.AwesomeMarkers.icon(
-        {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
-    );
-    marker_2f1c3ea13f7cce710b4a0f2ec3dfa9f0.setIcon(icon_1d2a97587bc5cd558125ac4552ca4528);
-
-
-    var popup_e883d36946ccff62de0dbb58380f9ba9 = L.popup({"maxWidth": "100%"});
-
-
-
-        var html_21aa921a038be904dee75d2b80ad8166 = $(`<div id="html_21aa921a038be904dee75d2b80ad8166" style="width: 100.0%; height: 100.0%;">Alerta&nbsp;de&nbsp;Ataques</div>`)[0];
-        popup_e883d36946ccff62de0dbb58380f9ba9.setContent(html_21aa921a038be904dee75d2b80ad8166);
-
-
-
-    marker_2f1c3ea13f7cce710b4a0f2ec3dfa9f0.bindPopup(popup_e883d36946ccff62de0dbb58380f9ba9)
-    ;
-
-        
+marker_609bc9d195fbd860187627da934915a1.bindPopup(popup_32fe95785bb0c71dfa3099da12ba7c71)
+;
     
     
+//Rui Barbosa
+var marker_609bc9d195fbd860187627da934915a1 = L.marker(
+    [-26.264618, -48.870687],
+    {}
+).addTo(map_6e83cbd798c966a931e947ef49eedbcb);
+
+
+var icon_5f3dec1eff9566ff9b53ec4b829f4416 = L.AwesomeMarkers.icon(
+    {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+);
+marker_609bc9d195fbd860187627da934915a1.setIcon(icon_5f3dec1eff9566ff9b53ec4b829f4416);
+
+
+var popup_32fe95785bb0c71dfa3099da12ba7c71 = L.popup({"maxWidth": "100%"});
+
+
+
+    var html_c47728bd3bc98ccd5697403c2f221a08 = $(`<div id="html_c47728bd3bc98ccd5697403c2f221a08" style="width: 100.0%; height: 100.0%;">Caminhada&nbsp;Segura</div>`)[0];
+    popup_32fe95785bb0c71dfa3099da12ba7c71.setContent(html_c47728bd3bc98ccd5697403c2f221a08);
+
+
+
+marker_609bc9d195fbd860187627da934915a1.bindPopup(popup_32fe95785bb0c71dfa3099da12ba7c71)
+;
+
+
+//Rua Marquês de Olinda
+var marker_609bc9d195fbd860187627da934915a1 = L.marker(
+    [-26.272375, -48.863035],
+    {}
+).addTo(map_6e83cbd798c966a931e947ef49eedbcb);
+
+
+var icon_5f3dec1eff9566ff9b53ec4b829f4416 = L.AwesomeMarkers.icon(
+    {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+);
+marker_609bc9d195fbd860187627da934915a1.setIcon(icon_5f3dec1eff9566ff9b53ec4b829f4416);
+
+
+var popup_32fe95785bb0c71dfa3099da12ba7c71 = L.popup({"maxWidth": "100%"});
+
+
+
+    var html_c47728bd3bc98ccd5697403c2f221a08 = $(`<div id="html_c47728bd3bc98ccd5697403c2f221a08" style="width: 100.0%; height: 100.0%;">Caminhada&nbsp;Segura</div>`)[0];
+    popup_32fe95785bb0c71dfa3099da12ba7c71.setContent(html_c47728bd3bc98ccd5697403c2f221a08);
+
+
+
+marker_609bc9d195fbd860187627da934915a1.bindPopup(popup_32fe95785bb0c71dfa3099da12ba7c71)
+;
+
+
+//Rua Bem-te-vi
+var marker_609bc9d195fbd860187627da934915a1 = L.marker(
+    [-26.268911, -48.875530],
+    {}
+).addTo(map_6e83cbd798c966a931e947ef49eedbcb);
+
+
+var icon_5f3dec1eff9566ff9b53ec4b829f4416 = L.AwesomeMarkers.icon(
+    {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+);
+marker_609bc9d195fbd860187627da934915a1.setIcon(icon_5f3dec1eff9566ff9b53ec4b829f4416);
+
+
+var popup_32fe95785bb0c71dfa3099da12ba7c71 = L.popup({"maxWidth": "100%"});
+
+
+
+    var html_c47728bd3bc98ccd5697403c2f221a08 = $(`<div id="html_c47728bd3bc98ccd5697403c2f221a08" style="width: 100.0%; height: 100.0%;">Caminhada&nbsp;Segura</div>`)[0];
+    popup_32fe95785bb0c71dfa3099da12ba7c71.setContent(html_c47728bd3bc98ccd5697403c2f221a08);
+
+
+
+marker_609bc9d195fbd860187627da934915a1.bindPopup(popup_32fe95785bb0c71dfa3099da12ba7c71)
+; 
+
+
+//Rua Águia
+var marker_609bc9d195fbd860187627da934915a1 = L.marker(
+    [-26.276157, -48.878245],
+    {}
+).addTo(map_6e83cbd798c966a931e947ef49eedbcb);
+
+
+var icon_5f3dec1eff9566ff9b53ec4b829f4416 = L.AwesomeMarkers.icon(
+    {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+);
+marker_609bc9d195fbd860187627da934915a1.setIcon(icon_5f3dec1eff9566ff9b53ec4b829f4416);
+
+
+var popup_32fe95785bb0c71dfa3099da12ba7c71 = L.popup({"maxWidth": "100%"});
+
+
+
+    var html_c47728bd3bc98ccd5697403c2f221a08 = $(`<div id="html_c47728bd3bc98ccd5697403c2f221a08" style="width: 100.0%; height: 100.0%;">Caminhada&nbsp;Segura</div>`)[0];
+    popup_32fe95785bb0c71dfa3099da12ba7c71.setContent(html_c47728bd3bc98ccd5697403c2f221a08);
+
+
+
+marker_609bc9d195fbd860187627da934915a1.bindPopup(popup_32fe95785bb0c71dfa3099da12ba7c71)
+;
+
+
+//Rua Almirante Jaceguay
+var marker_609bc9d195fbd860187627da934915a1 = L.marker(
+    [-26.274050, -48.886840],
+    {}
+).addTo(map_6e83cbd798c966a931e947ef49eedbcb);
+
+
+var icon_5f3dec1eff9566ff9b53ec4b829f4416 = L.AwesomeMarkers.icon(
+    {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+);
+marker_609bc9d195fbd860187627da934915a1.setIcon(icon_5f3dec1eff9566ff9b53ec4b829f4416);
+
+
+var popup_32fe95785bb0c71dfa3099da12ba7c71 = L.popup({"maxWidth": "100%"});
+
+
+
+    var html_c47728bd3bc98ccd5697403c2f221a08 = $(`<div id="html_c47728bd3bc98ccd5697403c2f221a08" style="width: 100.0%; height: 100.0%;">Caminhada&nbsp;Segura</div>`)[0];
+    popup_32fe95785bb0c71dfa3099da12ba7c71.setContent(html_c47728bd3bc98ccd5697403c2f221a08);
+
+
+
+marker_609bc9d195fbd860187627da934915a1.bindPopup(popup_32fe95785bb0c71dfa3099da12ba7c71)
+;
+
+
+//Piratuba
+var marker_609bc9d195fbd860187627da934915a1 = L.marker(
+    [-26.267757, -48.836174],
+    {}
+).addTo(map_6e83cbd798c966a931e947ef49eedbcb);
+
+
+var icon_5f3dec1eff9566ff9b53ec4b829f4416 = L.AwesomeMarkers.icon(
+    {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+);
+marker_609bc9d195fbd860187627da934915a1.setIcon(icon_5f3dec1eff9566ff9b53ec4b829f4416);
+
+
+var popup_32fe95785bb0c71dfa3099da12ba7c71 = L.popup({"maxWidth": "100%"});
+
+
+
+    var html_c47728bd3bc98ccd5697403c2f221a08 = $(`<div id="html_c47728bd3bc98ccd5697403c2f221a08" style="width: 100.0%; height: 100.0%;">Caminhada&nbsp;Segura</div>`)[0];
+    popup_32fe95785bb0c71dfa3099da12ba7c71.setContent(html_c47728bd3bc98ccd5697403c2f221a08);
+
+
+
+marker_609bc9d195fbd860187627da934915a1.bindPopup(popup_32fe95785bb0c71dfa3099da12ba7c71)
+;
+
+
+//Rua Tenente Antonio João
+var marker_609bc9d195fbd860187627da934915a1 = L.marker(
+    [-26.258290, -48.847191],
+    {}
+).addTo(map_6e83cbd798c966a931e947ef49eedbcb);
+
+
+var icon_5f3dec1eff9566ff9b53ec4b829f4416 = L.AwesomeMarkers.icon(
+    {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+);
+marker_609bc9d195fbd860187627da934915a1.setIcon(icon_5f3dec1eff9566ff9b53ec4b829f4416);
+
+
+var popup_32fe95785bb0c71dfa3099da12ba7c71 = L.popup({"maxWidth": "100%"});
+
+
+
+    var html_c47728bd3bc98ccd5697403c2f221a08 = $(`<div id="html_c47728bd3bc98ccd5697403c2f221a08" style="width: 100.0%; height: 100.0%;">Caminhada&nbsp;Segura</div>`)[0];
+    popup_32fe95785bb0c71dfa3099da12ba7c71.setContent(html_c47728bd3bc98ccd5697403c2f221a08);
+
+
+
+marker_609bc9d195fbd860187627da934915a1.bindPopup(popup_32fe95785bb0c71dfa3099da12ba7c71)
+;
+
+
+
+//Papa
+var marker_609bc9d195fbd860187627da934915a1 = L.marker(
+    [-26.277896, -48.821255],
+    {}
+).addTo(map_6e83cbd798c966a931e947ef49eedbcb);
+
+
+var icon_5f3dec1eff9566ff9b53ec4b829f4416 = L.AwesomeMarkers.icon(
+    {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+);
+marker_609bc9d195fbd860187627da934915a1.setIcon(icon_5f3dec1eff9566ff9b53ec4b829f4416);
+
+
+var popup_32fe95785bb0c71dfa3099da12ba7c71 = L.popup({"maxWidth": "100%"});
+
+
+
+    var html_c47728bd3bc98ccd5697403c2f221a08 = $(`<div id="html_c47728bd3bc98ccd5697403c2f221a08" style="width: 100.0%; height: 100.0%;">Caminhada&nbsp;Segura</div>`)[0];
+    popup_32fe95785bb0c71dfa3099da12ba7c71.setContent(html_c47728bd3bc98ccd5697403c2f221a08);
+
+
+
+marker_609bc9d195fbd860187627da934915a1.bindPopup(popup_32fe95785bb0c71dfa3099da12ba7c71)
+;
+
+
+
+//Rua XV de Novembro
+var marker_609bc9d195fbd860187627da934915a1 = L.marker(
+    [-26.294411, -48.880671],
+    {}
+).addTo(map_6e83cbd798c966a931e947ef49eedbcb);
+
+
+var icon_5f3dec1eff9566ff9b53ec4b829f4416 = L.AwesomeMarkers.icon(
+    {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+);
+marker_609bc9d195fbd860187627da934915a1.setIcon(icon_5f3dec1eff9566ff9b53ec4b829f4416);
+
+
+var popup_32fe95785bb0c71dfa3099da12ba7c71 = L.popup({"maxWidth": "100%"});
+
+
+
+    var html_c47728bd3bc98ccd5697403c2f221a08 = $(`<div id="html_c47728bd3bc98ccd5697403c2f221a08" style="width: 100.0%; height: 100.0%;">Caminhada&nbsp;Segura</div>`)[0];
+    popup_32fe95785bb0c71dfa3099da12ba7c71.setContent(html_c47728bd3bc98ccd5697403c2f221a08);
+
+
+
+marker_609bc9d195fbd860187627da934915a1.bindPopup(popup_32fe95785bb0c71dfa3099da12ba7c71)
+;
+
+
+//Santa Catarina
+var marker_609bc9d195fbd860187627da934915a1 = L.marker(
+    [-26.334548, -48.847537],
+    {}
+).addTo(map_6e83cbd798c966a931e947ef49eedbcb);
+
+
+var icon_5f3dec1eff9566ff9b53ec4b829f4416 = L.AwesomeMarkers.icon(
+    {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+);
+marker_609bc9d195fbd860187627da934915a1.setIcon(icon_5f3dec1eff9566ff9b53ec4b829f4416);
+
+
+var popup_32fe95785bb0c71dfa3099da12ba7c71 = L.popup({"maxWidth": "100%"});
+
+
+
+    var html_c47728bd3bc98ccd5697403c2f221a08 = $(`<div id="html_c47728bd3bc98ccd5697403c2f221a08" style="width: 100.0%; height: 100.0%;">Caminhada&nbsp;Segura</div>`)[0];
+    popup_32fe95785bb0c71dfa3099da12ba7c71.setContent(html_c47728bd3bc98ccd5697403c2f221a08);
+
+
+
+marker_609bc9d195fbd860187627da934915a1.bindPopup(popup_32fe95785bb0c71dfa3099da12ba7c71)
+;
 </script>
