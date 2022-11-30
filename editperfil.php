@@ -1,5 +1,6 @@
 <?php
 session_start();
+$title = "Editar perfil";
 include_once __DIR__ . './head.php';
 
 

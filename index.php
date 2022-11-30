@@ -19,7 +19,6 @@ include 'head.php';
                     <?php
 
                     if (!isset($_SESSION['user'])) {
-                        // echo "<li class='nav-list li'><a href='login.php'>Login</a></li>";
                         $mapa = '<h2 style="text-transform: uppercase; color: white; text-shadow: 2px 2px 5px black"> Faça o login para ter acesso ao mapa!</h2>';
                     } else {
                         $mapa = '
@@ -37,7 +36,7 @@ include 'head.php';
                             </div>
                             <div class="col-md-5 text-center">
                                 <p class="msgmapa" style="text-shadow: 2px 2px 5px black">Baixe o nosso aplicativo!</p>
-                                1
+
 <a href="apk/application-c1a18c9e-274c-44b5-93b7-2318019922b1.apk" download="SafeMap1.0"><img class="imgselo" src="./assets/imagens/selogoogleplay.png"></a>
                             </div>
                         </div>
@@ -55,32 +54,12 @@ include 'head.php';
         <div class="container">
             <h2 class="titulosobre mt-5">Desenvolvedores</h2>
             <br>
-            <!-- <div>
-        <h5 class="textosobre">O Safe Map é um projeto desenvolvido por alunos do curso de Análise e Desenvolvimento de
-            Sistemas da Universidade Federal do Rio Grande do Norte (UFRN) como parte da disciplina de Projeto
-            Integrador II. O projeto tem como objetivo principal a criação de um aplicativo que auxilie na prevenção de
-            acidentes de trânsito, principalmente em relação a acidentes com motociclistas. O aplicativo tem como
-            público alvo os motociclistas, que poderão se cadastrar no aplicativo e informar a localização de acidentes
-            ocorridos na cidade de Natal, assim como a gravidade do acidente. O aplicativo também terá um mapa que
-            mostrará a localização dos acidentes ocorridos na cidade, assim como a gravidade do acidente. O aplicativo
-            também terá um mapa que mostrará a localização dos acidentes ocorridos na cidade, assim como a gravidade do
-            acidente. O aplicativo também terá um mapa que mostrará a localização dos acidentes ocorridos na cidade,
-            assim como a gravidade do acidente. O aplicativo também terá um mapa que mostrará a localização dos
-            acidentes ocorridos na cidade, assim como a gravidade do acidente. O aplicativo também terá um mapa que
-            mostrará a localização dos acidentes ocorridos na cidade, assim como a gravidade do acidente. O aplicativo
-            também terá um mapa que mostrará a localização dos acidentes ocorridos na cidade, assim como a gravidade do
-            acidente. O aplicativo também terá um mapa que mostrará a localização dos acidentes ocorridos na cidade,
-            assim como a gravidade do acidente. O aplicativo também terá um mapa que mostrará a localização dos
-            acidentes ocorridos na cidade, assim como a gravidade do acidente. O aplicativo também terá um mapa que
-            mostrará a localização dos acidentes ocorridos na cidade, assim como a gravidade do acidente. O aplicativo
-            também terá um mapa que mostrará a localização dos acidentes ocorridos na cidade, assim como a gravidade do
-            acidente. O aplicativo também terá um mapa que mostrará a local</h5>
-    </div> -->
+          
             <div class="row text-center">
                 <div id="centro" class="col-md-4 mt-3">
-                    <img id="programadores" src="assets\imagens\usergraysemfundo.png" width="150px" height="150pt">
+                    <img id="programadores" src="assets\imagens\eike.png" width="400px" height="400pt">
                     <br>
-                    <p>Eike Wéslley de Oliveira
+                    <p style="margin-top: -90px">Eike Wéslley de Oliveira
                         <br>
                         Programador
                         <br>
@@ -91,9 +70,9 @@ include 'head.php';
                 </div>
                 <br>
                 <div id="centro" class="col-md-4">
-                    <img id="programadores" src="assets\imagens\usergraysemfundo.png" width="150px" height="150pt">
+                    <img id="programadores" src="assets\imagens\isa.png" width="400px" height="400pt">
                     <br>
-                    <p>Isabella Miranda da Silva
+                    <p style="margin-top: -90px">Isabella Miranda da Silva
                         <br>
                         Designer
                         <br>
@@ -104,9 +83,9 @@ include 'head.php';
                 </div>
                 <br>
                 <div id="centro" class="col-md-4">
-                    <img id="programadores" src="assets\imagens\usergraysemfundo.png" width="150px" height="150pt">
+                    <img id="programadores" src="assets\imagens\julia.png" width="400px" height="400pt">
                     <br>
-                    <p>Júlia Alves Theodoro
+                    <p style="margin-top: -90px">Júlia Alves Theodoro
                         <br>
                         Designer
                         <br>
@@ -117,9 +96,9 @@ include 'head.php';
                 </div>
                 <br>
                 <div id="centro" class="col-md-4">
-                    <img id="programadores" src="assets\imagens\usergraysemfundo.png" width="150px" height="150pt">
+                    <img id="programadores" src="assets\imagens\nicolas.png" width="400px" height="400pt">
                     <br>
-                    <p>Nicolas Brüski
+                    <p style="margin-top: -90px">Nicolas Brüski
                         <br>
                         Programador
                         <br>
@@ -130,9 +109,9 @@ include 'head.php';
                 </div>
                 <br>
                 <div id="centro" class="col-md-4">
-                    <img id="programadores" src="assets\imagens\usergraysemfundo.png" width="150px" height="150pt">
+                    <img id="programadores" src="assets\imagens\ruhan.png" width="400px" height="400pt">
                     <br>
-                    <p>Ruhan Kaio Schitz
+                    <p style="margin-top: -90px">Ruhan Kaio Schitz
                         <br>
                         Programador
                         <br>
@@ -143,9 +122,9 @@ include 'head.php';
                 </div>
                 <br>
                 <div id="centro" class="col-md-4">
-                    <img id="programadores" src="assets\imagens\usergraysemfundo.png" width="150px" height="150pt">
+                    <img id="programadores" src="assets\imagens\richard.png" width="400px" height="400px">
                     <br>
-                    <p>Richard Pereira Fernandes
+                    <p style="margin-top: -90px">Richard Pereira Fernandes
                         <br>
                         Programador
                         <br>

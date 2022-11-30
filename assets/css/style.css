@@ -162,29 +162,12 @@ main {
   border-radius: 10px;
   position: relative;
   box-sizing: border-box;
-  cursor: pointer;
-  transition: all 400ms ease;
 }
 
 .bordabutton1 {
   background-color: rgba(0, 0, 0, 0.8);
 }
 
-.bordabutton1:before {
-  content: "";
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  width: 0px;
-  height: 6.5vh;
-  background: rgba(0, 255, 0, 0.8);
-  border-radius: 10px;
-  transition: all 2s ease;
-}
-
-.bordabutton1:hover::before {
-  width: 100%;
-}
 
 .msginicial {
   font-size: 9vw;

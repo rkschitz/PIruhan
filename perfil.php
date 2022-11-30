@@ -1,5 +1,13 @@
 <?php
+$title = "Perfil";
 include_once __DIR__ . './head.php';
+
+if (!isset($_SESSION['user'])) {
+    header("location:index.php");
+} else {
+    $asd = '';
+}
+
 
 if (!isset($_SESSION['user'])) {
     $name = 'Faça login para saber';
@@ -25,8 +33,6 @@ if (!isset($_SESSION['user'])) {
             <div class="text-center">
             <?php echo $name; ?>
                 <h3 class="h3perfil">Aqui você pode ver as suas informações<h3>
-                        <!-- <h3 class="h3perfil">altera-las clicando <a class="atitle" href="editperfil.php"> AQUI</a>
-                            <h3> -->
             </div>
             <div class="col-md-auto MT-3 text-center">
             

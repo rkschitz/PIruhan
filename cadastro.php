@@ -1,5 +1,5 @@
 <?php
-
+$title = "Cadastro";
 include_once __DIR__ . './config/mysql.php';
 
 if (isset($_POST["acao"])) {
@@ -120,6 +120,8 @@ include "head.php";
             <label for="termodeuso">Aceito receber informações sobre as ruas da minha região no meu email.</label>
           </div>
           <div class="mt-3 d-flex justify-content-center">
+            //button with animation of click
+            
             <button id="botao" type="submit" class=" bordabutton bordabutton1" name="acao">Enviar</button>
           </div>
           <div class="mt-3">
