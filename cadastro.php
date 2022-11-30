@@ -1,6 +1,6 @@
 <?php
 $title = "Cadastro";
-include_once __DIR__ . './config/mysql.php';
+include_once __DIR__ . '/config/mysql.php';
 
 if (isset($_POST["acao"])) {
 
@@ -111,17 +111,15 @@ include "head.php";
               </div>
             </div>
           </div>
-          <div class="mt-3 d-flex">
+          <!-- <div class="mt-3 d-flex">
             <input class="checkbox" type="checkbox" name="termodeuso" id="termodeuso">
             <label for="termodeuso">Aceito os <a class="textcheckbox" href="#">Termos de uso</a> e <a href="#" class="textcheckbox">Politicas de Privacidade</a></label>
           </div>
           <div class=" d-flex">
             <input class="checkbox" type="checkbox" name="termodeuso" id="termodeuso">
             <label for="termodeuso">Aceito receber informações sobre as ruas da minha região no meu email.</label>
-          </div>
+          </div> -->
           <div class="mt-3 d-flex justify-content-center">
-            //button with animation of click
-            
             <button id="botao" type="submit" class=" bordabutton bordabutton1" name="acao">Enviar</button>
           </div>
           <div class="mt-3">

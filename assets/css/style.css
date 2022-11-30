@@ -144,6 +144,7 @@ main {
   background-color: black;
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
 }
 
 .bordaform {
@@ -225,6 +226,7 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: center;
+
 }
 
 @media (max-width: 768px) {

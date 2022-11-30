@@ -1,3 +1,17 @@
+<?php 
+if (!isset($_SESSION['user'])) {
+  // echo "<li class='nav-list li'><a href='login.php'>Login</a></li>";
+  $abrirmapa = '';
+  $contribua = '';
+} else {
+  $abrirmapa = ' <li class="nav-item">
+  <a class="nav-link text-white" href="./navigation/bairros.php">Abrir mapa</a> </li>';
+  $contribua = ' <li class="nav-item">
+  <a class="nav-link text-white" href="contribua.php">Contribua</a> </li>';
+}
+
+?>
+
 <nav class="navbar navbar-dark navbar-expand-lg bg-dark text-white bg-black">
   <div class="container">
     <a class="navbar-brand" href="index.php">SAFE MAP</a>
@@ -5,22 +19,13 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarScroll">
-      <ul class="navbar-nav w-100 items justify-content-end align-items-end me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
-        <li class="nav-item">
-          <a class="nav-link text-white" href="#sobrenos">Sobre nós</a>
-        </li>
-        <?php
-
-if (!isset($_SESSION['user'])) {
-  // echo "<li class='nav-list li'><a href='login.php'>Login</a></li>";
-  $abrirmapa = '';
-} else {
-  $abrirmapa = ' <li class="nav-item">
-  <a class="nav-link text-white" href="./navigation/bairros.html">Abrir mapa</a> </li>';
-}
-
-?>
-        <?php echo $abrirmapa ?>
+      
+    <ul class="navbar-nav w-100 items justify-content-end align-items-end me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">  
+      <?php //echo $contribua ?>
+      <li class="nav-item">
+        <a class="nav-link text-white" href="#sobrenos">Sobre nós</a>
+      </li>
+      <?php echo $abrirmapa ?>
         <!-- <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle text-white" href="./navigation/bairros.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             

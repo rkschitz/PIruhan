@@ -6,7 +6,7 @@
 
 $titulo = "Login";
 include __DIR__ . '/head.php';
-include_once __DIR__ . './config/mysql.php';
+include_once __DIR__ . '/config/mysql.php';
 
 $aviso =  false;
 if (isset($_POST['acao'])) {
@@ -98,5 +98,5 @@ if (isset($_POST['acao'])) {
 
 <?php
 
-include __DIR__ . './footer.php';
+include __DIR__ . '/footer.php';
 ?>
