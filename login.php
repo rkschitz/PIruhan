@@ -1,14 +1,17 @@
 <?php
 @session_start();
-
+// $_SESSION["user"]['senha'] = false;
+// $_SESSION["user"]['name'] = false;
 
 
 $titulo = "Login";
-include __DIR__ . './head.php';
+include __DIR__ . '/head.php';
 include_once __DIR__ . './config/mysql.php';
 
 $aviso =  false;
 if (isset($_POST['acao'])) {
+    // $_SESSION["user"]['senha'] = $_POST["senha"];
+    // $_SESSION["user"]['senha'] = $_POST["senha"];
     $email = $_POST['email'];
     $senha = $_POST['senha'];
 
