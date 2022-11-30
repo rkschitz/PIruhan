@@ -10,6 +10,7 @@ $title = (isset($title)) ? $title : "Titulo Padrao";
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="./assets/imagens/logo.jfif">
 
     <title><?php echo $title; ?></title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
