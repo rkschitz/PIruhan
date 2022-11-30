@@ -1403,9 +1403,9 @@ if (!isset($_SESSION['user'])) {
                     <a href="../index.php" id="links">Voltar</a>
                 </div>
                 <div id="navbar">
-                    <a href="perigo.html" id="links">Cuidado</a>
-                    <a href="seguro.html" id="links">Seguro</a>
-                    <a href="bairros.html" id="links">Bairros</a>
+                    <a href="perigo.php" id="links">Cuidado</a>
+                    <a href="seguro.php" id="links">Seguro</a>
+                    <a href="bairros.php" id="links">Bairros</a>
                 </div>
             </div>
             <div id="pesquisa">
