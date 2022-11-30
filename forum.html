@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body{
+            background-image: url(imagens/OIP\ \(2\).jpg);
+            background-size: 100%;
+            background-repeat: no-repeat;
+        }
+        #conteudo{
+            display: grid;
+            text-align: center;
+            color: rgb(221, 221, 221);
+        }
+        #fundoinput{
+            background-color: rgb(214, 214, 214);
+            width: 20%;
+            height: 60%;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 30px;
+            border-radius: 25px;
+        }
+        #input{
+            width: 70%;
+            height: 13%;
+            background-color: rgb(175, 175, 175);
+            margin: 3px;
+            border-radius: 5px;
+            font-size: 16px;
+            padding-left: 7px;
+        }
+        #input::placeholder{
+            color: rgb(228, 228, 228);
+        }
+    </style>
+</head>
+<body>
+    <div id="conteudo">
+        <div style="position: relative; top: 50%;">
+            <h1>Contribua conosco para maior segurança</h1><br>
+            <a style="font-size: 22px;">Aqui você pode dar sua opinião e<br> sugerir lugares perigosos em nossa<br> cidade com a finalidade de garantir<br> mais segurança a todos.</a>
+            <div id="fundoinput">
+                <br>
+                <h2 style="color: grey;">Deixe a sua Sujestão</h2>
+                <br>
+                <input placeholder="Assunto..." id="input"></input>
+                <input placeholder="Data do Ocorrido..." id="input"></input>
+            </div>
+        </div>    
+    </div>
+</body>
+</html>

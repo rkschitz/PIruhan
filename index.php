@@ -37,7 +37,7 @@ include 'head.php';
                             <div class="col-md-5 text-center">
                                 <p class="msgmapa" style="text-shadow: 2px 2px 5px black">Baixe o nosso aplicativo!</p>
 
-<a href="apk/application-c1a18c9e-274c-44b5-93b7-2318019922b1.apk" download="SafeMap1.0"><img class="imgselo" src="./assets/imagens/selogoogleplay.png"></a>
+<a href="apk/Safemap.apk" download="SafeMap1.0"><img class="imgselo" src="./assets/imagens/selogoogleplay.png"></a>
                             </div>
                         </div>
                     </div>
